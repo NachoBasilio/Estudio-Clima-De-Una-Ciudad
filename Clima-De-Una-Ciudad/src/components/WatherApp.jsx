@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+
 
 export default function WatherApp() {
+  const [weather, setWeather] = useState(null)
+
   return (
-    <div>WatherApp</div>
+    <>
+      <form></form>
+      <div>Info</div>
+    </>
   )
 }
