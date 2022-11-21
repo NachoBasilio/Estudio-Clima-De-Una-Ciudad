@@ -7,9 +7,7 @@ export default function WatherApp() {
 
   return (
     <>
-      <form>
-        
-      </form>
+      Whea
       <div>Info</div>
     </>
   )
