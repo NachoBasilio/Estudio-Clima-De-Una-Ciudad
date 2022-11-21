@@ -1,7 +1,10 @@
 import React from 'react'
+import WatherApp from './components/WatherApp'
 
 export default function App() {
   return (
-    <div>Todo listo para arrancar</div>
+    <>
+    <WatherApp/>
+    </>
   )
 }
