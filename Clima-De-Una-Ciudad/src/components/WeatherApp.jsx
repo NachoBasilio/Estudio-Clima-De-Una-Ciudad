@@ -5,7 +5,7 @@ import WeatherForm from './WeatherForm'
 export default function WatherApp() {
   const [weather, setWeather] = useState(null)
 
-  async function loadInfo(city = "London"){
+  async function loadInfo(city = "Santa Fe"){
     try {
       const request = await fetch(`${import.meta.env.VITE_SOME_URL}&key=${import.meta.env.VITE_SOME_KEY}&q=${city}`)
       const json = await request.json()
@@ -17,7 +17,7 @@ export default function WatherApp() {
 
   function handleChangeCity(city){
     setWeather(null)
-    loadInfo()
+    loadInfo(city)
   }
 
   return (

@@ -4,7 +4,7 @@ export default function WetherForm({onChangeCity}) {
     const [city, setCity] = useState("")    
 
     function onChange(e){
-        const value = e.value
+        const value = e.target.value
 
         if(value !== ""){
             setCity(value)
