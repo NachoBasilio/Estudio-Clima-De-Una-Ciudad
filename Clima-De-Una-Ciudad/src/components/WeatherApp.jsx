@@ -1,11 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import WeatherForm from './WeatherForm'
 
 
 export default function WatherApp() {
   const [weather, setWeather] = useState(null)
 
-  async function loadInfo(city = "Santa Fe"){
+  useEffect(()=>{
+    loadInfo()
+  }, [])
+
+  useEffect(()=>{
+    document.title = `Clima | ${weather?.location.name ?? ''}`
+  },[weather])
+
+  async function loadInfo(city = "Charata"){
     try {
       const request = await fetch(`${import.meta.env.VITE_SOME_URL}&key=${import.meta.env.VITE_SOME_KEY}&q=${city}`)
       const json = await request.json()
