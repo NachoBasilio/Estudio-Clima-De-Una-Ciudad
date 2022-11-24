@@ -9,7 +9,9 @@ export default function WatherApp() {
     try {
       const request = await fetch(`${import.meta.env.VITE_SOME_URL}&key=${import.meta.env.VITE_SOME_KEY}&q=${city}`)
       const json = await request.json()
-      console.log(json)
+
+      setWeather(json)
+
     } catch (error) {
       
     }
@@ -23,7 +25,7 @@ export default function WatherApp() {
   return (
     <>
       <WeatherForm onChangeCity={handleChangeCity}/>
-      <div>Info</div>
+      <div>{weather?.current.temp_c}</div>
     </>
   )
 }
